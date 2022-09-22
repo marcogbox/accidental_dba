@@ -10,6 +10,5 @@ qs.*
 FROM sys.dm_exec_query_stats AS qs  
 --CROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) AS s2    
 CROSS APPLY sys.dm_exec_text_query_plan(qs.plan_handle, qs.statement_start_offset, qs.statement_end_offset)
---where s2.text like 'SELECT rg.OrdineTaglia%'
 ORDER BY total_worker_time/execution_count DESC;  
 GO  

@@ -1,3 +1,5 @@
+# force command deletion from distributor DB
+
 This query returns the descending list of xact_seqno before the date set in the where condition, the major must be taken into account
 
 ```sql
@@ -147,7 +149,7 @@ The second xact_seqno returned if null indicates that the subscription identifie
     	        order by xact_seqno desc
 ```
 
-This query, with xact_seqno extracted from the previous query, returns a subscription that is blocking the cleanup
+This query, with xact_seqno extracted from the previous query, returns the subscription that is blocking the cleanup
 
 ```sql
 SELECT DISTINCT a.name, h.* FROM
