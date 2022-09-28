@@ -16,7 +16,7 @@ SELECT TOP( 50 )
 ,	qs.[total_grant_kb]
 ,	qs.[last_dop]
 ,	qs.[last_used_threads]
-INTO DBA..top_memory_grant
+--INTO DBA..top_memory_grant
 FROM
 	sys.dm_exec_query_stats AS qs WITH (NOLOCK)
 WHERE
